@@ -4,6 +4,7 @@
 }
 import React from "react";
 import Card from "./components/Card/Card";
+import Details from "./components/Details/Details";
 import { useEffect, useState } from "react";
 import "./global.css";
 
@@ -27,15 +28,19 @@ export default function Home() {
   }, []);
 
   return (
-    <div>
+    <div className="main-container">
       {temperature && (
-        <Card
-          temperature={temperature}
-          cityName={cityName}
-          weatherIcon={weatherIcon}
-        />
-      )}{" "}
-      {/* Pasar la temperatura y el nombre de la ciudad como props a Card */}
+        <div>
+          <Card
+            temperature={temperature}
+            cityName={cityName}
+            weatherIcon={weatherIcon}
+          />
+        </div>
+      )}
+      <div className="details">
+        <Details />
+      </div>
     </div>
   );
 }
