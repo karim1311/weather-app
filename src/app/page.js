@@ -17,12 +17,10 @@ export default function Home () {
       setDatos(data);
     })
   }, []);
-
-    const url =  `https://api.openweathermap.org/data/2.5/weather?q=dubai&appid=8200f5153a1ec94c419b46c12f847e8f`
-
-
+  
   return (
     <div>
+      <h1>Fetch de Weather API</h1>
       {datos && JSON.stringify(datos)}
     </div>
   )
