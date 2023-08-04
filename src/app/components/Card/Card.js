@@ -13,7 +13,7 @@ export default function Card({ temperature, cityName, weatherIcon }) {
   };
 
 
-    // Función para obtener la fecha actual en formato dd/mm/yyyy
+    // Función para obtener la fecha actual 
     const getCurrentDate = () => {
       const daysOfWeek = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
       const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
@@ -27,12 +27,8 @@ export default function Card({ temperature, cityName, weatherIcon }) {
 
   return (
     <div >
-      <div className="main .container .bg-primary" >
-        <div className="search .container" >
-          <button>Search for places</button>
-        </div>
+      <div className="main" >
         <div className="imagen" >
-          {/* Usar la función getWeatherIconUrl para obtener la URL de la imagen */}
           {weatherIcon && (
             <Image
               src={getWeatherIconUrl(weatherIcon)}

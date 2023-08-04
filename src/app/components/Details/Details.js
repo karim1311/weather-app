@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import "./Details.css"
 
-export default function Details() {
+export default function Details({ city }) {
   const KEY = "8200f5153a1ec94c419b46c12f847e8f";
-  const city = "Pueblo Nuevo";
   const [windSpeed, setWindSpeed] = useState();
   const [humidity, setHumidity] = useState();
   const [visibility, setVisibility] = useState();
@@ -18,7 +17,7 @@ export default function Details() {
       setVisibility(data?.visibility);
       setAirPressure(data?.main?.pressure);
     });
-  }, []);
+  }, [city]);
 
   return (
     <div className='details-container'>
@@ -27,7 +26,7 @@ export default function Details() {
         <p className='data'>{windSpeed} m/s</p>
       </div>
       <div className='box'>
-        <strong>Humidity:</strong> {humidity}% ({humidity}%)
+        <strong>Humidity</strong> {humidity}% 
         <progress value={humidity} max='100'></progress>
       </div>
       <div className='box'>
